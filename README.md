@@ -2,7 +2,7 @@
 Temporary website until main version is complete.
 
 ## Live Demo
-steven-ha.com
+https://steven-ha.com/
 
 ## Screenshots
 
