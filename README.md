@@ -1,6 +1,10 @@
 # Personal Portfolio Website - Steven Ha
 Temporary website until main version is complete.
 
+## Task List
+- [ ] Design new website via Figma
+- [ ] ...
+
 ## Live Demo
 https://steven-ha.com/
 
