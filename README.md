@@ -6,7 +6,6 @@ Temporary website until main version is complete.
 - [ ] ...
 
 ## Live Demo
-https://steven-ha.com/
 
 ## Screenshots
 
