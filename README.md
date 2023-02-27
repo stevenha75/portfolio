@@ -4,6 +4,7 @@ Temporary website until main version is complete.
 ## Task List
 - [ ] Design new website via Figma
 - [ ] ...
+- [ ] Implement Website
 
 ## Live Demo
 
