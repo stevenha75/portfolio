@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +7,18 @@
 
   <!-- CSS framework -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+  <!-- my CSS -->
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
   <!-- TODO: Choose the proper class here -->
-  <div class="container">
+  <div>
     {% block content %}
     {% endblock content %}
   </div>
+  <!-- JavaScript -->
+  <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>
