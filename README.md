@@ -2,9 +2,8 @@
 Temporary website until main version is complete.
 
 ## Task List
-- [ ] Initialize Django Project
-- [ ] Design new website via Figma
 - [ ] Implement Website
+- [ ] Write docs
 
 ## Live Demo
 
