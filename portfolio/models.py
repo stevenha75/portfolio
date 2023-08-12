@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class UserProfile(models.Model):
+    ...
+
+
+class Social(models.Model):
+    ...
+
+
+class Project(models.Model):
+    ...
+
+
+class Skill(models.Model):
+    ...
