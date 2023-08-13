@@ -11,7 +11,16 @@ WORKDIR /code
 
 # Install dependencies
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+RUN apt-get update && apt-get install -y curl \
+  && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
+  && apt-get install -y nodejs --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/* \
+  && pip install -r requirements.txt
 
 # Copy project
 COPY . .
+
+# Run Tailwind setup and build commands
+RUN SECRET_KEY=nothing python manage.py tailwind install --no-input;
+RUN SECRET_KEY=nothing python manage.py tailwind build --no-input;
+RUN SECRET_KEY=nothing python manage.py collectstatic --no-input;
