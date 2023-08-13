@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-9c&d0opm2*oj(j2xeamnh4gw#r8i+bij%dn#d5z*8c3!@-!@lu
 DEBUG = True
 
 ALLOWED_HOSTS = ["0.0.0.0"]
+INTERNAL_IPS = ["127.0.0.1"]
 
 
 # Application definition
@@ -39,6 +40,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "portfolio",
     "fontawesomefree",
+    "tailwind",
+    "theme",
+    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -49,6 +53,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
 ROOT_URLCONF = "django_project.urls"
@@ -135,3 +140,6 @@ MEDIA_ROOT = BASE_DIR / "static"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Tailwind
+TAILWIND_APP_NAME = "theme"
