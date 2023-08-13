@@ -1,11 +1,39 @@
 from django.db import models
 
 
+class Theme(models.Model):
+    primary_color = models.CharField(max_length=7)
+    secondary_color = models.CharField(max_length=7)
+    favicon_image = models.ImageField(upload_to="images/")
+
+    class Meta:
+        # meta data attribute for the display in the admin panel
+        verbose_name_plural = "Theme"
+
+    def save(self, *args, **kwargs):
+        # self.pk doesn't exist for new instances (allows editting)
+        if not self.pk and Theme.objects.exists():
+            raise ValueError("Only one instance of Theme can be created.")
+        return super().save(*args, **kwargs)
+
+    def __str__(self):
+        return "Portfolio Theme"
+
+
 class UserProfile(models.Model):
-    image = models.ImageField(upload_to="user_profile/", blank=True)
     name = models.CharField(max_length=100)
+    image = models.ImageField(upload_to="images/user_profile/", blank=True)
+    email = models.EmailField()
     resume_url = models.URLField()
     social = models.ManyToManyField("Social")
+
+    class Meta:
+        verbose_name_plural = "User Profile"
+
+    def save(self, *args, **kwargs):
+        if not self.pk and UserProfile.objects.exists():
+            raise ValueError("Only one instance of UserProfile can be created.")
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -25,7 +53,7 @@ class Project(models.Model):
     skills = models.ManyToManyField("Skill")
     url = models.URLField()
     description = models.TextField()
-    image = models.ImageField(upload_to="projects/", blank=True)
+    image = models.ImageField(upload_to="images/projects/", blank=True)
 
     def __str__(self):
         return self.name
