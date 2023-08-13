@@ -1,7 +1,17 @@
 {% extends "_base.html" %}
 
 {% block content %}
-<div class="section">Test</div>
-<div class="section">Test</div>
-<div class="section">Test</div>
+{% if user_profile %}
+    <div class="section">
+        
+    </div>
+    {% if projects %}
+        {% include 'snippets/_projects.html' %}
+    {% endif %}
+    {% if skills %}
+        {% include 'snippets/_skills.html' %}
+    {% endif %}
+{% else %}
+    {% include 'snippets/_error.html' %}
+{% endif %}
 {% endblock content %}

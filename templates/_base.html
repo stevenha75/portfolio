@@ -1,52 +1,57 @@
-{% load static %}
-{% load static tailwind_tags %}
-<!DOCTYPE html>
+{% load static %} {% load static tailwind_tags %}
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-  <title>Steven Ha</title>
+    <title>Steven Ha</title>
 
-  <!-- CSS  -->
-  {% tailwind_css %}
-  <link rel="stylesheet" type="text/css" href="{% static  'css/fullpage.css' %}">
-  <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <style>
-    /* TODO: Add theme overrides here */
-  </style>
-  <!-- Font Awesome Free icons and utilities -->
-  <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <!-- CSS  -->
+    {% tailwind_css %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static  'css/fullpage.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <style>
+      /* TODO: Add theme overrides here */
+    </style>
+    <!-- Font Awesome Free icons and utilities -->
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
-  {% if user_profile.favicon_image %}
-    <link rel="icon" type="image/png" href="{{ user_profile.favicon_image.url }}">
-  {% endif %}
-</head>
-<body>
-  <div id="fullpage">
-    {% block content %}
-    {% endblock content %}
-  </div>
+    {% if user_profile.favicon_image %}
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ user_profile.favicon_image.url }}"
+    />
+    {% endif %}
+  </head>
+  <body>
+    <div id="fullpage">{% block content %} {% endblock content %}</div>
 
-  <!-- JavaScript -->
-  <script src="{% static 'js/base.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/fullpage.js' %}"></script>
-  <script type="text/javascript">
-    new fullpage('#fullpage', {
-      // Behavior
-      anchors:['home', 'projects', 'skills'],
-      loopBottom: true,
+    <!-- JavaScript -->
+    <script src="{% static 'js/base.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/fullpage.js' %}"></script>
+    <script type="text/javascript">
+      new fullpage("#fullpage", {
+        // Behavior
+        anchors: ["home", "projects", "skills"],
+        loopBottom: true,
 
-      // Style
-      verticalCentered: false,
-      sectionsColor: ['#2F3237', '#2F3237', '#2F3237'],
+        // Style
+        verticalCentered: false,
+        // TODO: This will need to change when colors are added to a model
+        sectionsColor: ["#2F3237", "#2F3237", "#2F3237"],
 
-      // Navigation
-      navigation: true,
-      navigationPosition: 'right',
-      slidesNavigation: true,
-    });
-  </script>
-</body>
+        // Navigation
+        navigation: true,
+        navigationPosition: "right",
+        slidesNavigation: true,
+      });
+    </script>
+  </body>
 </html>
