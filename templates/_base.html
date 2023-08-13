@@ -3,26 +3,30 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}{% endblock title %}</title>
+  <title>Steven Ha</title>
 
-  <!-- CSS framework + misc -->
+  <!-- CSS  -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.css">
-  <!-- my CSS -->
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
-  <!-- One file includes all the Font Awesome Free icons and utilities -->
+  <style>
+    /* TODO: Add theme overrides here */
+  </style>
+  <!-- Font Awesome Free icons and utilities -->
   <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+
+  {% if theme.favicon_image %}
+    <link rel="icon" type="image/png" href="{{ theme.favicon_image.url }}">
+  {% endif %}
 </head>
 <body>
-  <!-- TODO: Choose the proper class here -->
   <div>
     {% block content %}
     {% endblock content %}
   </div>
 
-  <!-- my JavaScript -->
+  <!-- JavaScript -->
   <script src="{% static 'js/base.js' %}"></script>
-  <!-- other JavaScript -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.js"></script>
 </body>
 </html>
