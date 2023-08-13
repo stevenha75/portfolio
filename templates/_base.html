@@ -1,11 +1,16 @@
 {% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Steven Ha</title>
 
   <!-- CSS  -->
+  {% tailwind_css %}
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.20/fullpage.css">
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <style>
@@ -14,12 +19,12 @@
   <!-- Font Awesome Free icons and utilities -->
   <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
-  {% if theme.favicon_image %}
-    <link rel="icon" type="image/png" href="{{ theme.favicon_image.url }}">
+  {% if user_profile.favicon_image %}
+    <link rel="icon" type="image/png" href="{{ user_profile.favicon_image.url }}">
   {% endif %}
 </head>
 <body>
-  <div>
+  <div id="fullpage">
     {% block content %}
     {% endblock content %}
   </div>
