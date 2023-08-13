@@ -6,7 +6,7 @@ from portfolio.models import Project, Skill, Theme, UserProfile
 
 class HomePageView(View):
     def get(self, request):
-        theme = Theme.objects.first()  # TODO: This might not be too useful?
+        theme = Theme.objects.first()
         user_profile = UserProfile.objects.first()
         projects = Project.objects.all()
         skills = Skill.objects.all()
@@ -18,4 +18,4 @@ class HomePageView(View):
             "skills": skills,
         }
 
-        return render(request, "home.html", context)
+        return render(request, "portfolio.html", context)
