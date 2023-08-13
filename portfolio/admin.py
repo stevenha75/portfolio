@@ -1,11 +1,6 @@
 from django.contrib import admin
 
-from portfolio.models import Project, Skill, Social, Theme, UserProfile
-
-
-@admin.register(Theme)
-class ThemeAdmin(admin.ModelAdmin):
-    ...
+from portfolio.models import Project, Skill, Social, UserProfile
 
 
 @admin.register(UserProfile)
