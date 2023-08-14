@@ -1,3 +1,4 @@
+# TODO: Figure out a way to handle image names (maybe UUID?)
 from django.db import models
 
 
@@ -54,6 +55,7 @@ class Skill(models.Model):
 
     name = models.CharField(max_length=255)
     icon_class = models.CharField(max_length=50)
+    url = models.URLField(blank=True)
     category = models.CharField(max_length=2, choices=SKILL_CATEGORIES)
     level = models.CharField(max_length=1, choices=SKILL_LEVELS)
 
