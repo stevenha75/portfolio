@@ -1,1 +1,10 @@
-Test
+<div class="absolute bottom-0">
+    {% for social in user_profile.social.all %}
+        <a href="{{ social.profile_url }}" target="_blank">
+            <i class="{{ social.icon_class }} text-5xl md:text-6xl ml-4 mb-4 mr-4" aria-label="{{ social.platform }} icon"></i>
+        </a>
+    {% endfor %}
+    <a href="mailto:{{ user_profile.email }}" target="_blank">
+        <i class="fa-solid fa-envelope text-5xl md:text-6xl ml-4 mb-4 mr-4" aria-label="Mail icon"></i>
+    </a>
+</div>
