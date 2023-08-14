@@ -9,13 +9,13 @@
     <title>Steven Ha</title>
 
     <!-- CSS  -->
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     {% tailwind_css %}
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static  'css/fullpage.css' %}"
     />
-    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <style>
       /* TODO: Add theme overrides here */
     </style>
@@ -40,7 +40,7 @@
       new fullpage("#fullpage", {
         // Behavior
         anchors: ["home", "projects", "skills"],
-        loopBottom: true,
+        continuousVertical: true,        
 
         // Style
         verticalCentered: false,

@@ -3,15 +3,32 @@
 {% block content %}
 {% if user_profile %}
     <div class="section">
-        
+        <div class="flex flex-col items-center justify-center h-screen">
+        <div class="px-16">
+            <img class="rounded-full" src="{{ user_profile.image.url }}" alt="{{ user_profile.name }}">
+        </div>
+            <p class="text-9xl">Steven Ha</p>
+            <h2>
+                <a href="{{ user_profile.resume_url }}" target="_blank">Resume</a>
+                | <a href="#projects">Projects</a> 
+                | <a href="#skills">Skills</a>
+            </h2>
+        </div>
+        <div class="absolute bottom-0">
+            test
+        </div>
     </div>
     {% if projects %}
         {% include 'snippets/_projects.html' %}
+    {% else %}
+        {% include 'snippets/_under_construction' %}
     {% endif %}
     {% if skills %}
         {% include 'snippets/_skills.html' %}
+    {% else %}
+        {% include 'snippets/_under_construction' %}
     {% endif %}
 {% else %}
-    {% include 'snippets/_error.html' %}
+    {% include 'snippets/_error_no_user_profile.html' %}
 {% endif %}
 {% endblock content %}
