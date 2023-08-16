@@ -1,3 +1,5 @@
+<!-- TODO: Consider setting up lazyloading -->
+
 {% extends "_base.html" %}
 
 {% block content %}
@@ -8,7 +10,7 @@
                 <img class="rounded-full" src="{{ user_profile.image.url }}" alt="{{ user_profile.name }}">
             </div>
             <div class="font-bold text-center">
-                <h1 class="text-5xl md:text-6xl" style="line-height: 1.5;">Steven Ha</h1> 
+                <h1 class="text-5xl md:text-6xl" style="line-height: 1.5;"> {{ user_profile.name }} </h1> 
                 <h2 class="text-xl md:text-2xl">
                     <a href="{{ user_profile.resume_url }}" target="_blank"><u>Resume</u></a>
                     | <a href="#projects"><u>Projects</u></a> 
