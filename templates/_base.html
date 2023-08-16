@@ -40,17 +40,19 @@
       new fullpage("#fullpage", {
         // Behavior
         anchors: ["home", "projects", "skills"],
-        continuousVertical: true,        
+        continuousVertical: true,    
+        scrollOverflow: false,   
 
         // Style
         verticalCentered: false,
         // TODO: This will need to change when colors are added to a model
         sectionsColor: ["#2F3237", "#2F3237", "#2F3237"],
+        controlArrowsHTML: ['<div class="fp-arrow pl-14"></div>', '<div class="fp-arrow pr-14"></div>'],
 
         // Navigation
         navigation: true,
         navigationPosition: "right",
-        slidesNavigation: true,
+        slidesNavigation: false,
       });
     </script>
   </body>
