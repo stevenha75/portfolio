@@ -1,4 +1,4 @@
-# Personal Portfolio Website - Steven Ha
+# Extensible Portfolio Template
  No code extensible developer portfolio w/ django backend 
 
 ## Task List
