@@ -2,28 +2,29 @@
     {% for project in projects %}
         <div class="slide">
             <div class="flex flex-col justify-center items-center h-screen">
-                <h1 class="font-bold text-5xl md:text-6xl pb-5">Projects</h1>
                 <div class="container">
-                    <div class="w-full bg-white p-8 h-full rounded-3xl mb-8 xl:mb-0">
-                        <div class="bg-gray-500 h-80 rounded-2xl pt-4 px-4 mb-4">
+                    <div class="bg-white p-8 rounded-3xl">
+                        <div class="bg-gray-500 h-96 rounded-2xl pt-4 px-4 mb-4">
                             <img alt="{{ project.name }} image" src="{{ project.image.url }}" class="object-cover h-full w-full rounded-t-2xl">
                         </div>
                         <h3 class="text-black font-black text-xl mb-4">
                             {{ project.name }}
                         </h3>
-                        <p class="leading-relaxed font-sans" style="color: rgb(31 24 19);">
+                        <p class="leading-relaxed text-lg font-sans" style="color: rgb(31 24 19);">
                             {{ project.description }}
                         </p>
-                        <div class="flex items-center mt-3">
-                            <div class="w-1/2 flex flex-row items-center space-x-1">
+                        <div class="flex mt-3">
+                            <div class="w-1/2 flex flex-row space-x-1">
                                 {% for skill in project.skills.all %}
                                     <a href="{{ skill.url }}" target="_blank">
-                                        <i class="{{ skill.icon_class }}" style="color: rgb(31 24 19);" aria-label="{{ skill.name }} icon"></i>
+                                        <i class="{{ skill.icon_class }} text-lg" style="color: rgb(31 24 19);" aria-label="{{ skill.name }} icon"></i>
                                     </a>
                                 {% endfor %}
                             </div>
                             <div class="w-1/2 text-right">
-
+                                <a href="{{ project.url }}" target="_blank">
+                                    <i class="fa-solid fa-globe text-lg" style="color: rgb(31 24 19);" aria-label="{{ project.name }} url"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
