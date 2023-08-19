@@ -16,9 +16,6 @@
       type="text/css"
       href="{% static  'css/fullpage.css' %}"
     />
-    <style>
-      /* TODO: Add theme overrides here */
-    </style>
     <!-- Font Awesome Free icons and utilities -->
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
@@ -47,12 +44,12 @@
         verticalCentered: false,
         // TODO: This will need to change when colors are added to a model
         sectionsColor: ["#2F3237", "#2F3237", "#2F3237"],
-        controlArrowsHTML: ['<div class="fp-arrow pl-14"></div>', '<div class="fp-arrow pr-14"></div>'],
+        controlArrowsHTML: ['<div class="hidden lg:block fp-arrow pl-14"></div>', '<div class="hidden lg:block fp-arrow pr-14"></div>'],
 
         // Navigation
         navigation: true,
         navigationPosition: "right",
-        slidesNavigation: false,
+        slidesNavigation: true,
       });
     </script>
   </body>
