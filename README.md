@@ -1,5 +1,5 @@
 # Personal Portfolio Website - Steven Ha
-Temporary website until main version is complete.
+ No code extensible developer portfolio w/ django backend 
 
 ## Task List
 - [ ] Implement Website
