@@ -1,1 +1,26 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url('../fonts/Nunito-Regular.ttf') format('truetype');
+}
 
+body {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-color: #2F3237;
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translate(-30px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1); 
+    }
+}
+
+.loading-animation {
+    animation: fade-up 2s;
+}

@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y curl \
 # Copy project
 COPY . .
 
-# Run Tailwind setup and build commands
-RUN SECRET_KEY=nothing python manage.py tailwind install --no-input;
-RUN SECRET_KEY=nothing python manage.py tailwind build --no-input;
-RUN SECRET_KEY=nothing python manage.py collectstatic --no-input;
+# !!Tailwind setup and build commands (Do this before pushing to prod)
+# RUN SECRET_KEY=nothing python manage.py tailwind install --no-input;
+# RUN SECRET_KEY=nothing python manage.py tailwind build --no-input;
+# RUN SECRET_KEY=nothing python manage.py collectstatic --no-input;
