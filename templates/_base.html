@@ -20,13 +20,11 @@
     <!-- Font Awesome Free icons and utilities -->
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
-    {% if user_profile.favicon_image %}
     <link
       rel="icon"
       type="image/png"
       href="{% static 'images/favicon.ico' %}"
     />
-    {% endif %}
   </head>
   <body>
     {% block content %} 
