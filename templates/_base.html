@@ -1,4 +1,6 @@
-{% load static %} {% load static tailwind_tags %}
+{% load static %} 
+{% load static tailwind_tags %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,43 +16,23 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="{% static  'css/fullpage.css' %}"
     />
     <!-- Font Awesome Free icons and utilities -->
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
     {% if user_profile.favicon_image %}
+    <!-- TODO: Fix this so it is not a fixed file -->
     <link
       rel="icon"
       type="image/png"
-      href="{{ user_profile.favicon_image.url }}"
+      href="{% static 'images/favicon.ico' %}"
     />
     {% endif %}
   </head>
   <body>
-    <div id="fullpage">{% block content %} {% endblock content %}</div>
-
+    {% block content %} 
+    {% endblock content %}
     <!-- JavaScript -->
     <script src="{% static 'js/base.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/fullpage.js' %}"></script>
-    <script type="text/javascript">
-      new fullpage("#fullpage", {
-        // Behavior
-        anchors: ["home", "projects", "skills"],
-        continuousVertical: true,    
-        scrollOverflow: false,   
-
-        // Style
-        verticalCentered: false,
-        // TODO: This will need to change when colors are added to a model
-        sectionsColor: ["#2F3237", "#2F3237", "#2F3237"],
-        controlArrowsHTML: ['<div class="hidden lg:block fp-arrow pl-14"></div>', '<div class="hidden lg:block fp-arrow pr-14"></div>'],
-
-        // Navigation
-        navigation: true,
-        navigationPosition: "right",
-        slidesNavigation: true,
-      });
-    </script>
   </body>
 </html>
