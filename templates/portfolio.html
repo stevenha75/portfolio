@@ -4,8 +4,8 @@
 {% block content %}
 {% if user_profile %}
     <div class="mx-6 2xl:mx-52 loading-animation">
-        <div class="flex flex-col lg:flex-row items-center justify-center h-screen">
-            <div class="mb-7 lg:mr-14 lg:mb-0">
+        <div class="flex flex-col lg:flex-row items-center justify-center lg:h-screen">
+            <div class="mb-7 mt-4 lg:mr-14 lg:mb-0">
                 <img class="rounded-full" src="{% static 'images/user_profile/NU_photo.png' %}" alt="{{ user_profile.name }}">
             </div>
             <div>
@@ -14,13 +14,13 @@
                 <div class="mt-6 flex items-center flex-wrap">
                     {% for social in user_profile.social.all %}
                     <a href="{{ social.profile_url }}" target="_blank">
-                        <i class="{{ social.icon_class }} text-4xl md:text-5xl mr-7 mb-3 transform transition-all hover:scale-125" aria-label="{{ social.platform }} icon"></i>
+                        <i class="{{ social.icon_class }} text-4xl md:text-5xl mr-7 mb-4 transform transition-all hover:scale-125" aria-label="{{ social.platform }} icon"></i>
                     </a>
                     {% endfor %}
                     <a href="mailto:{{ user_profile.email }}" target="_blank">
-                        <i class="fa-solid fa-envelope text-4xl md:text-5xl mr-7 mb-3 transform transition-all hover:scale-125" aria-label="Mail icon"></i>
+                        <i class="fa-solid fa-envelope text-4xl md:text-5xl mr-7 mb-4 transform transition-all hover:scale-125" aria-label="Mail icon"></i>
                     </a>
-                    <a href="{{ user_profile.resume_url }}" class="rounded-lg md:py-1.5 px-3 mr-7 mb-3 bg-white transform transition-all hover:scale-110" aria-label="Resume url">
+                    <a href="{{ user_profile.resume_url }}" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-white transform transition-all hover:scale-110" aria-label="Resume url">
                         <span class="font-bold text-xl whitespace-nowrap" style="color: #2F3237;">Resume <i class="fa-solid fa-download"></i></span>
                     </a>
                 </div>
