@@ -21,7 +21,6 @@
     <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
 
     {% if user_profile.favicon_image %}
-    <!-- TODO: Fix this so it is not a fixed file -->
     <link
       rel="icon"
       type="image/png"
@@ -33,6 +32,6 @@
     {% block content %} 
     {% endblock content %}
     <!-- JavaScript -->
-    <script src="{% static 'js/base.js' %}"></script>
+    <!-- <script src="{% static 'js/base.js' %}"></script> -->
   </body>
 </html>
