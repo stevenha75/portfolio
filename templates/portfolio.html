@@ -10,7 +10,7 @@
             </div>
             <div>
                 <h1 class="font-bold text-4xl md:text-6xl" style="line-height: 1.5;">Hey, I'm Steven 👋</h1> 
-                <p class="text-xl md:text-3xl" style="color: black;">A full-stack dev studying @ University of Maryland with a passion for meaningful and impactful work.</p>
+                <p class="text-xl md:text-3xl" style="color: black;">A dev & entrepeneur studying @ University of Maryland with a passion for meaningful and impactful work.</p>
                 <div class="mt-6 flex items-center flex-wrap">
                     {% for social in user_profile.social.all %}
                     <a href="{{ social.profile_url }}" target="_blank" aria-label="{{ social.platform }} profile">
@@ -20,7 +20,10 @@
                     <a href="mailto:{{ user_profile.email }}" target="_blank" aria-label="Send an email to {{ user_profile.name }}">
                         <i class="fa-solid fa-envelope text-4xl md:text-5xl mr-7 mb-4 transform transition-all hover:scale-125"></i>
                     </a>
-                    <a href="{{ user_profile.resume_url }}" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
+                    <a href="https://stevenha75.beehiiv.com/subscribe" target="_blank" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
+                        <span class="font-bold text-xl whitespace-nowrap" style="color: #E2E5E3;">Blog <i class="fa-solid fa-newspaper"></i></span>
+                    </a>
+                    <a href="{{ user_profile.resume_url }}" target="_blank" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
                         <span class="font-bold text-xl whitespace-nowrap" style="color: #E2E5E3;">Resume <i class="fa-solid fa-download"></i></span>
                     </a>
                 </div>
