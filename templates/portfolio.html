@@ -6,11 +6,11 @@
     <div class="mx-6 2xl:mx-52 loading-animation">
         <div class="flex flex-col lg:flex-row items-center justify-center lg:h-screen">
             <div class="mb-7 mt-4 lg:mr-14 lg:mb-0">
-                <img class="rounded-full" src="{% static 'images/user_profile/NU_photo.png' %}" alt="Profile picture of {{ user_profile.name }}">
+                <img class="rounded-full" src="{% static 'images/user_profile/HS (NBLUR).jpg' %}" alt="Profile picture of {{ user_profile.name }}">
             </div>
             <div>
                 <h1 class="font-bold text-4xl md:text-6xl" style="line-height: 1.5;">Hey, I'm Steven 👋</h1> 
-                <p class="text-xl md:text-3xl" style="color: black;">Software engineer, 20. Building cool things and seeing where it takes me. Find me <span class="text-blue-500">@stevenha75</span> everywhere.</p>
+                <p class="text-xl md:text-3xl" style="color: black;">20 y/o software engineer, building cool things and seeing where it takes me. Find me <span class="text-blue-500">@stevenha75</span> everywhere.</p>
                 <div class="mt-6 flex items-center flex-wrap">
                     {% for social in user_profile.social.all %}
                     <a href="{{ social.profile_url }}" target="_blank" aria-label="{{ social.platform }} profile">
@@ -23,9 +23,9 @@
                     <a href="https://stevenha75.beehiiv.com/subscribe" target="_blank" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
                         <span class="font-bold text-xl whitespace-nowrap" style="color: #E2E5E3;">Blog <i class="fa-solid fa-newspaper"></i></span>
                     </a>
-                    <a href="{{ user_profile.resume_url }}" target="_blank" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
+                    <!-- <a href="{{ user_profile.resume_url }}" target="_blank" class="rounded-lg md:py-1.5 px-3 mr-7 mb-4 bg-custom transform transition-all hover:scale-110" aria-label="Download {{ user_profile.name }}'s resume">
                         <span class="font-bold text-xl whitespace-nowrap" style="color: #E2E5E3;">Resume <i class="fa-solid fa-download"></i></span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </div> 
